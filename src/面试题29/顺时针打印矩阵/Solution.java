@@ -11,7 +11,9 @@ package 面试题29.顺时针打印矩阵;
  */
 class Solution {
     public int[] spiralOrder(int[][] matrix) {
-        if(matrix.length == 0) return new int[0];
+        if(matrix.length == 0) {
+            return new int[0];
+        }
         int l = 0, r = matrix[0].length - 1, t = 0, b = matrix.length - 1, x = 0;
         int[] res = new int[(r + 1) * (b + 1)];
         while(true) {
