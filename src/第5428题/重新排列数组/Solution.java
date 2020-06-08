@@ -14,7 +14,7 @@ public class Solution {
         int index = 0;
         for (int i = 0;i < n; i++) {
             ints[index++] = nums[i];
-            ints[index++] = nums[i++];
+            ints[index++] = nums[n+i];
         }
         return ints;
     }
