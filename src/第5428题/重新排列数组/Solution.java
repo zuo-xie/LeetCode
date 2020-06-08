@@ -11,13 +11,10 @@ package 第5428题.重新排列数组;
 public class Solution {
     public int[] shuffle(int[] nums, int n) {
         int[] ints = new int[nums.length];
-        for (int i = 0;i < nums.length; i+=2) {
-            ints[i] = nums[i];
-            i++;
-        }
-        for (int i = 1;i < nums.length; i+=2) {
-            ints[i] = nums[i];
-            i++;
+        int index = 0;
+        for (int i = 0;i < n; i++) {
+            ints[index++] = nums[i];
+            ints[index++] = nums[i++];
         }
         return ints;
     }
