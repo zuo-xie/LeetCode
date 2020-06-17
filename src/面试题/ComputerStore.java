@@ -14,19 +14,20 @@ public class ComputerStore {
     public static void main(String[] args) {
         new Computer(20,"笔记本","笔记本1");
         new Computer(15,"笔记本","笔记本2");
-        new Computer(20,"笔记本","笔记本3");
-        new Computer(20,"笔记本","笔记本4");
-        new Computer(20,"笔记本","笔记本5");
+        new Computer(30,"笔记本","笔记本3");
+        new Computer(50,"笔记本","笔记本4");
+        new Computer(60,"笔记本","笔记本5");
         new Computer(20,"台式","台式1");
-        new Computer(20,"台式","台式2");
-        new Computer(20,"台式","台式3");
-        new Computer(20,"台式","台式4");
+        new Computer(2,"台式","台式2");
+        new Computer(10,"台式","台式3");
+        new Computer(50,"台式","台式4");
 
         Computer computer = new Computer();
-        computer.remove("笔记本");
+        String remove = computer.remove("789");
+        System.out.println(remove);
 
         Computer.getDesktop();
-        ArrayList<Computer> notebook = Computer.getNotebook();
-        System.out.println(notebook);
+        System.out.println(Computer.getNotebook());
+        System.out.println(Computer.getDesktop());
     }
 }

@@ -84,10 +84,13 @@ public class Computer implements Comparable {
             Computer computer1 = notebook.get(0);
             int i = computer.compareTo(computer1);
             if (i == 1) {
+                desktop.remove(0);
                 return computer.getName();
             } else if (i == -1) {
+                notebook.remove(0);
                 return computer1.getName();
             } else {
+                desktop.remove(0);
                 return computer.getName();
             }
         }
