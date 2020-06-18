@@ -2,11 +2,8 @@ package 面试题;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Queue;
-
 /**
- * 一些声明信息
+ * 计算机类
  * Description: <br/>
  * date: 2020/6/17 15:48<br/>
  *
@@ -15,25 +12,22 @@ import java.util.Queue;
  */
 public class Computer implements Comparable {
 
-    //可以用LocalDateTime，这里我不知道要怎么将时间进行比较
+
     //存放的时间
-    private Integer time;
+    private LocalDateTime time = LocalDateTime.now();
     //类型
     private String type;
     //电脑姓名
     private String name;
 
 
-    private static final ArrayList<Computer> desktop =new ArrayList();
-    private static final ArrayList<Computer> notebook =new ArrayList();
+    private static ArrayList<Computer> desktop =new ArrayList();
+    private static ArrayList<Computer> notebook =new ArrayList();
 
     public Computer() {
-        System.out.println("desk="+desktop);
-        System.out.println("notebook="+notebook);
     }
 
-    public Computer(Integer time,String type,String name) {
-        this.time = time;
+    public Computer(String type,String name) {
         this.type = type;
         this.name = name;
         put(this);
@@ -47,7 +41,7 @@ public class Computer implements Comparable {
         return notebook;
     }
 
-    public Integer getTime() {
+    public LocalDateTime getTime() {
         return time;
     }
 
@@ -73,10 +67,10 @@ public class Computer implements Comparable {
 
     //取出电脑
     public String remove(String name) {
-        if (name == "台式") {
+        if (name .equals("台式")) {
             Computer computer = desktop.remove(0);
             return computer.getName();
-        } else if (name == "笔记本") {
+        } else if (name.equals("笔记本")) {
             Computer computer = notebook.remove(0);
             return computer.getName();
         } else {
@@ -100,12 +94,12 @@ public class Computer implements Comparable {
     @Override
     public int compareTo(Object o) {
         Computer computer = (Computer) o;
-        if (computer.time < this.time) {
+        //判断是否在指定时间之后
+        if (computer.time.isAfter(this.time)) {
             return 1;
-        } else if(computer.time > this.time) {
+        } else {
             return -1;
         }
-        return 0;
     }
 
     @Override
