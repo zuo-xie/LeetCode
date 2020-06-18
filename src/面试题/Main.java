@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @author zuo<br />
  * @since JDK 1.8
  */
-public class ComputerStore {
+public class Main {
 
     public static void main(String[] args) {
         new Computer("台式","台式1");
